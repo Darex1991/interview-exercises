@@ -1,6 +1,6 @@
 import type { User } from "../../api/mockUsers";
 import { onKeyDownCallback, renderMatchedName } from "./UserSearch.utils";
-import { describe, it, expect, vi } from "vitest";
+import { describe, it, expect, jest } from "@jest/globals";
 
 const users: User[] = [
   {
@@ -48,10 +48,10 @@ describe("UserSearch.utils", () => {
   describe("onKeyDownCallback", () => {
     it("should set highlighted index to the next user", () => {
       const highlightedIndex = 0;
-      const callback = vi.fn();
+      const callback = jest.fn();
       const setHighlightedIndex = () => callback(1);
-      const setIsExpanded = vi.fn();
-      const onSelectUser = vi.fn();
+      const setIsExpanded = jest.fn();
+      const onSelectUser = jest.fn();
       const e = new KeyboardEvent("keydown", {
         key: "ArrowDown",
       }) as unknown as React.KeyboardEvent<HTMLInputElement>;
@@ -68,10 +68,10 @@ describe("UserSearch.utils", () => {
 
     it("should set highlighted index to the previous user", () => {
       const highlightedIndex = 1;
-      const callback = vi.fn();
+      const callback = jest.fn();
       const setHighlightedIndex = () => callback(0);
-      const setIsExpanded = vi.fn();
-      const onSelectUser = vi.fn();
+      const setIsExpanded = jest.fn();
+      const onSelectUser = jest.fn();
       const e = new KeyboardEvent("keydown", {
         key: "ArrowUp",
       }) as unknown as React.KeyboardEvent<HTMLInputElement>;
@@ -87,14 +87,14 @@ describe("UserSearch.utils", () => {
     });
 
     it("should set is expanded to false", () => {
-      const setIsExpanded = vi.fn();
+      const setIsExpanded = jest.fn();
       const e = new KeyboardEvent("keydown", {
         key: "Escape",
       }) as unknown as React.KeyboardEvent<HTMLInputElement>;
 
       onKeyDownCallback(e, {
         highlightedIndex: 0,
-        setHighlightedIndex: vi.fn(),
+        setHighlightedIndex: jest.fn(),
         users,
         setIsExpanded,
         onSelectUser: () => {},

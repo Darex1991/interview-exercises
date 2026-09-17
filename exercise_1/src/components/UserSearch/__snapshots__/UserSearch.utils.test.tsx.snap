@@ -1,6 +1,6 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
-exports[`UserSearch.utils > renderMatchedName > should render matched name #2 > <span>Magd<b>al</b>ena Jankowska</span> 1`] = `
+exports[`UserSearch.utils renderMatchedName should render matched name #2: <span>Magd<b>al</b>ena Jankowska</span> 1`] = `
 <span>
   Magd
   <b>
@@ -10,26 +10,7 @@ exports[`UserSearch.utils > renderMatchedName > should render matched name #2 > 
 </span>
 `;
 
-exports[`UserSearch.utils > renderMatchedName > should render matched name > <span>John <b>Wick</b></span> 1`] = `
-<span>
-  John 
-  <b>
-    Wick
-  </b>
-</span>
-`;
-
-exports[`renderMatchedName > should render matched name #2 > <span>Magd<b>al</b>ena Jankowska</span> 1`] = `
-<span>
-  Magd
-  <b>
-    al
-  </b>
-  ena Jankowska
-</span>
-`;
-
-exports[`renderMatchedName > should render matched name > <span>John <b>Wick</b></span> 1`] = `
+exports[`UserSearch.utils renderMatchedName should render matched name: <span>John <b>Wick</b></span> 1`] = `
 <span>
   John 
   <b>

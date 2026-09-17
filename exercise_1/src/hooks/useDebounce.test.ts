@@ -1,12 +1,12 @@
-import { describe, expect, it, vi } from "vitest";
+import { describe, expect, it, jest } from "@jest/globals";
 import { useDebounce } from "./useDebounce";
 import { renderHook, waitFor } from "@testing-library/react";
 
 describe("useDebounce", () => {
   it("should debounce the callback", async () => {
-    const test = vi.fn();
+    const test = jest.fn();
 
-    const callback = vi.fn(
+    const callback = jest.fn(
       (val: string): Promise<void> =>
         new Promise((resolve) => {
           test(val);
@@ -20,6 +20,6 @@ describe("useDebounce", () => {
     result.current.debouncedCallback("tes");
     result.current.debouncedCallback("test");
 
-    await waitFor(() => expect(test).toHaveBeenCalledOnce());
+    await waitFor(() => expect(test).toHaveBeenCalledTimes(1));
   });
 });
