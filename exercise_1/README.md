@@ -1,6 +1,7 @@
 # Exercise 1 - UserSearch
 
 [Requirements](./TASK.md)
+
 [Claude final grade](./OCENA.md)
 
 
