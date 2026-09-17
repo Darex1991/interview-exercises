@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .box { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; rx: 8; }
+    .box2 { fill: #ecfdf5; stroke: #059669; stroke-width: 2; rx: 8; }
+    .box3 { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; rx: 8; }
+    .box4 { fill: #fdf2f8; stroke: #db2777; stroke-width: 2; rx: 8; }
+    .label { font-size: 15px; fill: #1f2937; text-anchor: middle; }
+    .small { font-size: 11px; fill: #4b5563; text-anchor: middle; }
+    .arrow { stroke: #6b7280; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="30" width="120" height="50" class="box"/>
+  <text x="80" y="60" class="label">Klient</text>
+
+  <rect x="200" y="30" width="140" height="50" class="box"/>
+  <text x="270" y="55" class="label">CDN</text>
+  <text x="270" y="70" class="small">statyczne assety</text>
+
+  <rect x="400" y="30" width="160" height="50" class="box"/>
+  <text x="480" y="55" class="label">Load Balancer</text>
+  <text x="480" y="70" class="small">rozkłada ruch</text>
+
+  <rect x="620" y="30" width="150" height="50" class="box3"/>
+  <text x="695" y="55" class="label">API Gateway</text>
+  <text x="695" y="70" class="small">auth, rate limit</text>
+
+  <rect x="400" y="140" width="120" height="50" class="box2"/>
+  <text x="460" y="170" class="label">App Server 1</text>
+
+  <rect x="540" y="140" width="120" height="50" class="box2"/>
+  <text x="600" y="170" class="label">App Server 2</text>
+
+  <rect x="680" y="140" width="120" height="50" class="box2"/>
+  <text x="740" y="170" class="label">App Server 3</text>
+
+  <rect x="500" y="250" width="140" height="50" class="box4"/>
+  <text x="570" y="275" class="label">Cache</text>
+  <text x="570" y="290" class="small">Redis / Memcached</text>
+
+  <rect x="380" y="340" width="150" height="50" class="box"/>
+  <text x="455" y="365" class="label">DB Primary</text>
+  <text x="455" y="380" class="small">zapisy</text>
+
+  <rect x="560" y="340" width="150" height="50" class="box"/>
+  <text x="635" y="365" class="label">DB Replica</text>
+  <text x="635" y="380" class="small">odczyty</text>
+
+  <rect x="700" y="250" width="150" height="50" class="box3"/>
+  <text x="775" y="275" class="label">Message Queue</text>
+  <text x="775" y="290" class="small">Kafka / SQS</text>
+
+  <rect x="700" y="340" width="150" height="50" class="box2"/>
+  <text x="775" y="365" class="label">Worker</text>
+  <text x="775" y="380" class="small">async jobs</text>
+
+  <path class="arrow" d="M140,55 L200,55"/>
+  <path class="arrow" d="M340,55 L400,55"/>
+  <path class="arrow" d="M560,55 L620,55"/>
+  <path class="arrow" d="M695,80 L695,110 L460,110 L460,140"/>
+  <path class="arrow" d="M695,80 L695,110 L600,110 L600,140"/>
+  <path class="arrow" d="M695,80 L695,140"/>
+
+  <path class="arrow" d="M600,190 L570,250"/>
+  <path class="arrow" d="M460,190 L455,340"/>
+  <path class="arrow" d="M570,300 L455,340"/>
+  <path class="arrow" d="M455,365 L560,365"/>
+
+  <path class="arrow" d="M740,190 L775,250"/>
+  <path class="arrow" d="M775,300 L775,340"/>
+
+  <text x="450" y="440" class="small" font-size="12">Legenda: niebieski – infrastruktura sieciowa, zielony – warstwa aplikacji, różowy/pomarańcz – cache i komunikacja async, DB – warstwa danych</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 460" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .label { font-size: 16px; fill: #1f2937; text-anchor: middle; font-weight: bold; }
+    .small { font-size: 12px; fill: #4b5563; text-anchor: middle; }
+    .edge { stroke: #4f46e5; stroke-width: 3; }
+    .pair { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; rx: 8; }
+  </style>
+
+  <polygon points="250,40 60,360 440,360" fill="none" class="edge"/>
+
+  <circle cx="250" cy="40" r="34" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="250" y="35" class="label">C</text>
+  <text x="250" y="52" class="small">Consistency</text>
+
+  <circle cx="60" cy="360" r="34" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="60" y="355" class="label">A</text>
+  <text x="60" y="372" class="small">Availability</text>
+
+  <circle cx="440" cy="360" r="34" fill="#fdf2f8" stroke="#db2777" stroke-width="2"/>
+  <text x="440" y="355" class="label">P</text>
+  <text x="440" y="372" class="small">Partition</text>
+  <text x="440" y="385" class="small">Tolerance</text>
+
+  <rect x="130" y="150" width="130" height="55" class="pair"/>
+  <text x="195" y="172" class="small" font-weight="bold">CA</text>
+  <text x="195" y="188" class="small">tylko teoretycznie</text>
+  <text x="195" y="200" class="small">(brak partycji)</text>
+
+  <rect x="20" y="410" width="160" height="45" class="pair"/>
+  <text x="100" y="428" class="small" font-weight="bold">AP</text>
+  <text x="100" y="444" class="small">np. Cassandra, DynamoDB</text>
+
+  <rect x="300" y="410" width="180" height="45" class="pair"/>
+  <text x="390" y="428" class="small" font-weight="bold">CP</text>
+  <text x="390" y="444" class="small">np. HBase, MongoDB (majority)</text>
+
+  <text x="250" y="20" class="small" font-size="13">Podczas partycji sieci wybierasz maksymalnie 2 z 3 (w praktyce: C vs A)</text>
+</svg>

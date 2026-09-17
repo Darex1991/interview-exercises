@@ -1,0 +1,21 @@
+{
+  "name": "exercise-5-algorithms-data-structures",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.13.3",
+    "babel-jest": "^30.0.0",
+    "jest": "^30.0.0",
+    "typescript": "~6.0.2"
+  }
+}
