@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 460" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .col { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.5; rx: 10; }
+    .outer { fill: #fff7ed; stroke: #ea580c; stroke-width: 2; rx: 8; }
+    .inner { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; rx: 8; }
+    .hook { fill: #ecfdf5; stroke: #059669; stroke-width: 2; rx: 8; }
+    .title { font-size: 14px; font-weight: bold; fill: #1f2937; text-anchor: middle; }
+    .label { font-size: 12.5px; fill: #1f2937; text-anchor: middle; }
+    .small { font-size: 10.5px; fill: #4b5563; text-anchor: middle; }
+    .arrow { stroke: #9ca3af; stroke-width: 1.5; fill: none; marker-end: url(#a5); }
+  </style>
+  <defs>
+    <marker id="a5" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- Column 1: HOC -->
+  <rect x="20" y="20" width="240" height="400" class="col"/>
+  <text x="140" y="45" class="title">HOC</text>
+
+  <rect x="45" y="60" width="190" height="70" class="outer"/>
+  <text x="140" y="85" class="label">withLoading(...)</text>
+  <text x="140" y="102" class="small">wrapper komponent</text>
+
+  <rect x="65" y="140" width="150" height="60" class="inner"/>
+  <text x="140" y="163" class="label">Component</text>
+  <text x="140" y="178" class="small">dostaje extra propsy</text>
+
+  <path class="arrow" d="M140,130 L140,140"/>
+
+  <text x="140" y="240" class="small" font-size="11">+ jawny reużywalny kod</text>
+  <text x="140" y="258" class="small" font-size="11">− "wrapper hell" przy kilku HOC</text>
+  <text x="140" y="276" class="small" font-size="11">− niejasne skąd biorą się propsy</text>
+  <text x="140" y="294" class="small" font-size="11">− kolizje nazw propsów</text>
+
+  <!-- Column 2: Render Props -->
+  <rect x="290" y="20" width="240" height="400" class="col"/>
+  <text x="410" y="45" class="title">Render Props</text>
+
+  <rect x="315" y="60" width="190" height="70" class="outer"/>
+  <text x="410" y="85" class="label">&lt;MouseTracker&gt;</text>
+  <text x="410" y="102" class="small">trzyma stan (x, y)</text>
+
+  <rect x="335" y="140" width="150" height="60" class="inner"/>
+  <text x="410" y="163" class="label">children(state)</text>
+  <text x="410" y="178" class="small">funkcja renderująca UI</text>
+
+  <path class="arrow" d="M410,130 L410,140"/>
+
+  <text x="410" y="240" class="small" font-size="11">+ jawnie widać skąd dane</text>
+  <text x="410" y="258" class="small" font-size="11">− zagnieżdżone callbacki (JSX)</text>
+  <text x="410" y="276" class="small" font-size="11">− trudniej czytać duże drzewa</text>
+
+  <!-- Column 3: Custom Hook -->
+  <rect x="560" y="20" width="240" height="400" class="col"/>
+  <text x="680" y="45" class="title">Custom Hook</text>
+
+  <rect x="600" y="70" width="160" height="60" class="hook"/>
+  <text x="680" y="95" class="label">useMousePosition()</text>
+  <text x="680" y="110" class="small">logika w hooku</text>
+
+  <rect x="585" y="160" width="190" height="60" class="inner"/>
+  <text x="680" y="183" class="label">Component</text>
+  <text x="680" y="198" class="small">const { x, y } = useMousePosition()</text>
+
+  <path class="arrow" d="M680,130 L680,160"/>
+
+  <text x="680" y="260" class="small" font-size="11">+ brak zagnieżdżania/wrapperów</text>
+  <text x="680" y="278" class="small" font-size="11">+ łatwo komponować kilka hooków</text>
+  <text x="680" y="296" class="small" font-size="11">+ dominujący wzorzec od React 16.8</text>
+
+  <text x="420" y="440" class="small" font-size="12">Wszystkie trzy rozwiązują ten sam problem — reużycie logiki stanowej — hooki w praktyce wyparły HOC i render props</text>
+</svg>
