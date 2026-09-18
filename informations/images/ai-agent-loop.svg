@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" font-family="Helvetica, Arial, sans-serif">
+  <style>
+    .user { fill: #fef3c7; stroke: #d97706; stroke-width: 2; rx: 10; }
+    .model { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; rx: 10; }
+    .tool { fill: #ecfdf5; stroke: #059669; stroke-width: 2; rx: 8; }
+    .ctx { fill: #fff; stroke: #9ca3af; stroke-width: 1.5; stroke-dasharray: 5,4; rx: 10; }
+    .label { font-size: 14px; fill: #1f2937; text-anchor: middle; }
+    .small { font-size: 11px; fill: #4b5563; text-anchor: middle; }
+    .flow { stroke: #4f46e5; stroke-width: 2; fill: none; marker-end: url(#f1); }
+    .back { stroke: #ea580c; stroke-width: 2; fill: none; marker-end: url(#f2); }
+    .in { stroke: #9ca3af; stroke-width: 1.5; fill: none; stroke-dasharray: 4,3; marker-end: url(#f3); }
+  </style>
+  <defs>
+    <marker id="f1" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#4f46e5"/></marker>
+    <marker id="f2" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#ea580c"/></marker>
+    <marker id="f3" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 9 3.5, 0 7" fill="#9ca3af"/></marker>
+  </defs>
+
+  <!-- context window -->
+  <rect x="40" y="30" width="740" height="150" class="ctx"/>
+  <text x="410" y="52" class="small" font-size="12" font-weight="bold">Context window (okno kontekstu) – wszystko, co model "widzi" w danej chwili</text>
+
+  <rect x="60" y="70" width="160" height="90" class="ctx" stroke-dasharray="0"/>
+  <text x="140" y="95" class="label">System prompt</text>
+  <text x="140" y="113" class="small">CLAUDE.md / .cursorrules</text>
+  <text x="140" y="129" class="small">reguły projektu, memory</text>
+  <text x="140" y="145" class="small">opisy narzędzi i skilli</text>
+
+  <rect x="240" y="70" width="160" height="90" class="ctx" stroke-dasharray="0"/>
+  <text x="320" y="95" class="label">Prompt użytkownika</text>
+  <text x="320" y="113" class="small">zadanie, pytanie</text>
+  <text x="320" y="129" class="small">wklejony kod, @plik</text>
+  <text x="320" y="145" class="small">zaznaczenie w IDE</text>
+
+  <rect x="420" y="70" width="160" height="90" class="ctx" stroke-dasharray="0"/>
+  <text x="500" y="95" class="label">Historia rozmowy</text>
+  <text x="500" y="113" class="small">poprzednie odpowiedzi</text>
+  <text x="500" y="129" class="small">wyniki narzędzi</text>
+  <text x="500" y="145" class="small">(rośnie w każdym kroku)</text>
+
+  <rect x="600" y="70" width="160" height="90" class="ctx" stroke-dasharray="0"/>
+  <text x="680" y="95" class="label">Załadowane skille</text>
+  <text x="680" y="113" class="small">SKILL.md wczytany</text>
+  <text x="680" y="129" class="small">dopiero gdy potrzebny</text>
+  <text x="680" y="145" class="small">(progressive disclosure)</text>
+
+  <!-- agent loop -->
+  <rect x="60" y="260" width="170" height="70" class="user"/>
+  <text x="145" y="290" class="label" font-weight="bold">Użytkownik</text>
+  <text x="145" y="310" class="small">"dodaj testy do X"</text>
+
+  <rect x="325" y="260" width="170" height="70" class="model"/>
+  <text x="410" y="290" class="label" font-weight="bold">Model (LLM)</text>
+  <text x="410" y="310" class="small">myśli → wybiera narzędzie</text>
+
+  <rect x="590" y="260" width="170" height="70" class="tool"/>
+  <text x="675" y="290" class="label" font-weight="bold">Narzędzia (tools)</text>
+  <text x="675" y="310" class="small">Read, Edit, Bash, MCP…</text>
+
+  <path class="flow" d="M230,295 L325,295"/>
+  <text x="277" y="285" class="small">prompt</text>
+
+  <path class="flow" d="M495,285 L590,285"/>
+  <text x="542" y="275" class="small">tool call</text>
+
+  <path class="back" d="M590,310 L495,310"/>
+  <text x="542" y="330" class="small">tool result</text>
+
+  <path class="back" d="M325,320 C260,360 200,360 165,330"/>
+  <text x="245" y="378" class="small">odpowiedź końcowa</text>
+
+  <path class="in" d="M410,180 L410,260"/>
+  <text x="470" y="225" class="small">cały kontekst idzie do modelu</text>
+
+  <text x="410" y="415" class="small" font-size="12" font-weight="bold">Agent = LLM + narzędzia + pętla: model woła narzędzie, dostaje wynik, decyduje co dalej – aż uzna, że zadanie jest skończone.</text>
+  <text x="410" y="437" class="small" font-size="12">Każdy obrót pętli dokłada tokeny do kontekstu, dlatego warto ograniczać szum (CLAUDE.md krótkie, skille ładowane leniwie, /clear między zadaniami).</text>
+</svg>
